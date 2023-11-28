@@ -20,10 +20,9 @@ while True:
         while True:
            # type_fichier = input("Spécifiez le type de fichier à récupérer (par exemple, .pdf) : ")
             #commande = f"recupere {type_fichier}"
-            command
+            command = input("Command: ")
             conn.sendall(command.encode())
             
     except:
          print("Disconned from: ", addr)
-            
-conn.close()
+       
