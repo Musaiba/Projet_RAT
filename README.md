@@ -10,15 +10,15 @@ Installation
 	Pour installer les dépendances Python requises, exécutez la commande suivante dans le dossier "client":
 		```pip install -r Client-requirements.txt```
 Utilisation
-	Serveur 
+	Serveur :
 	1. Exécutez le script server.py sur la machine server en utilisant Python 3.
 	2. Attendez que le serveur soit en écoute sur l'adresse IP et le port spécifié.
 	3. Une fois qu'une connexion est établie avec un client, vous pouvez utiliser les commandes disponibles pour interagir avec la machine cliente.
-	Client
+	Client :
 	1. Exécutez le script client.py sur la machine cliente en utilisant Python 3.
 	2. Assurez-vous que le client peut se connecter au server en utilisant l'adresse IP et le port spécifiés.
 	3. Une fois connecté, vous pouvez recevoir des commandes du server et exécuter des actions sur la machine cliente en fonction de ces commandes.
-Commandes Disponibles 
+Commandes Disponibles : 
 	upload: Permet de téléverser un fichier du serveur vers la machine cliente.
 	download <chemin/du/fichier> <nom_du_fichier>: Permet de télécharger un fichier de la machine cliente vers le serveur.
 	screenshot: Prend une capture d'écran de la machine cliente et l'envoie au serveur.
