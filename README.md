@@ -15,7 +15,7 @@ Installation
 		```pip install -r Client-requirements.txt```
 		
 Utilisation
-<<<<<<< HEAD
+
 	Serveur :
 	1. Exécutez le script server.py sur la machine server en utilisant Python 3.
 	2. Attendez que le serveur soit en écoute sur l'adresse IP et le port spécifié.
@@ -25,7 +25,7 @@ Utilisation
 	2. Assurez-vous que le client peut se connecter au server en utilisant l'adresse IP et le port spécifiés.
 	3. Une fois connecté, vous pouvez recevoir des commandes du server et exécuter des actions sur la machine cliente en fonction de ces commandes.
 Commandes Disponibles : 
-=======
+
 
 	Serveur 
 	
@@ -41,7 +41,6 @@ Commandes Disponibles :
 	
 Commandes Disponibles :
 
->>>>>>> b95a284 (update readme)
 	upload: Permet de téléverser un fichier du serveur vers la machine cliente.
 	download <chemin/du/fichier> <nom_du_fichier>: Permet de télécharger un fichier de la machine cliente vers le serveur.
 	screenshot: Prend une capture d'écran de la machine cliente et l'envoie au serveur.
