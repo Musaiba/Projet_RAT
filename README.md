@@ -1,21 +1,21 @@
-#**Projet RAT Python (Remote Admin tools ) by Mariam CISSE and Mike Arthur NYOGA - 4SI4 ESGI**
+# **Projet RAT Python (Remote Admin tools ) by Mariam CISSE and Mike Arthur NYOGA - 4SI4 ESGI**
 
-**Description**
+## **Description**
 
 Ce projet consiste en un ensemble de script Python permettant d'établir une connexion distante entre un client et un serveur, permettant ainsi à l'utilisateur d'exécuter des commandes à distance sur la machine cliente.  
 
-**Installation**
+## **Installation**
 
 **Prérequis**:
 	
 1.Python 3.x installé sur le server et le client.  
 2.Les bibliothèques Python requises, telles que socket, subprocess, os, platform, pyautogui, PIL, etc.  
 
-##**Installation des dependances** :
+## **Installation des dependances** :
 pour installer les dépendances Python requises, exécutez la commande suivante dans le dossier "client":
 		```pip install -r Client-requirements.txt```
 		
-**Utilisation**
+## **Utilisation**
 
 **Serveur**:
 			
@@ -30,7 +30,7 @@ pour installer les dépendances Python requises, exécutez la commande suivante 
 3. Une fois connecté, vous pouvez recevoir des commandes du server et exécuter des actions sur la machine cliente en fonction de ces commandes.  
 
 	
-**Commandes Disponibles**: 
+## **Commandes Disponibles**: 
 
 upload: Permet de téléverser un fichier du serveur vers la machine cliente.  
 download <chemin/du/fichier> <nom_du_fichier>: Permet de télécharger un fichier de la machine cliente vers le serveur.  
